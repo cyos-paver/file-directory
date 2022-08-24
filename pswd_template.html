@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        function start() {
+            var content = document.getElementById('content');
+            content.style.visibility = 'hidden';
+        }
+
+        window.onload = start;
+
+        function isValid(){
+            var password = document.getElementById('pswd').value;
+            var content = document.getElementById('content');
+            if (password == 'password') {
+                content.style.visibility = 'visible';
+                document.getElementById('form_thing').style.visibility = 'hidden';
+            }
+            else {
+                alert('Wrong Password')
+            }
+        }
+    </script>
+</head>
+<style>
+    .content {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        width: 300px;
+        border: 15px solid rgb(182, 230, 218);
+        padding: 50px;
+        margin: 20px;
+    }
+</style>
+<body>
+    <div class="content" id="form_thing">
+        <center>
+            <form id="f_pwsd" onsubmit="return false;">
+                <label for="pswd">Enter Password:</label><br>
+                <input input type="password" id="pswd" fname="pswd"><br>
+                <input type="button" id="submission" value="Enter" onclick="isValid();"/>
+            </form>
+        </center>
+    </div>
+
+    <div class="content" id="content">
+        <center>
+            <h1>balls</h1>
+        </center>
+    </div>
+
+    <script src="pswd_js.js"></script>    
+</body>
+</html>
